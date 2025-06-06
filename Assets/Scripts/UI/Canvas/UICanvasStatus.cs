@@ -8,7 +8,7 @@ public class UICanvasStatus : MonoBehaviour, IGUI
     
     public void Initialization()
     {
-        gameObject.SetActive(false);
+        Close();
     }
 
     public void Open()
@@ -18,5 +18,6 @@ public class UICanvasStatus : MonoBehaviour, IGUI
 
     public void Close()
     {
+        gameObject.SetActive(false);
     }
 }

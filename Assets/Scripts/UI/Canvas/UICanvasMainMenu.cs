@@ -57,6 +57,9 @@ public class UICanvasMainMenu : MonoBehaviour, IGUI
             case MainButtonType.Inventory:
                 ShowInventory();
                 break;
+            case MainButtonType.Back:
+                ShowMainMenu();
+                break;
         }
     }
 
@@ -64,11 +67,21 @@ public class UICanvasMainMenu : MonoBehaviour, IGUI
     {
         canvasStatus.Open();
         canvasMenuBtn.Close();
+        canvasMenuBtn.OpenBackBtn();
     }
 
     private void ShowInventory()
     {
         canvasInventory.Open();
         canvasMenuBtn.Close();
+        canvasMenuBtn.OpenBackBtn();
+    }
+
+    private void ShowMainMenu()
+    {
+        Debug.Log("ShowMainMenu");
+        if(canvasStatus.gameObject.activeSelf) canvasStatus.Close();
+        if(canvasInventory.gameObject.activeSelf) canvasInventory.Close();
+        canvasMenuBtn.OpenMainBtn();
     }
 }
