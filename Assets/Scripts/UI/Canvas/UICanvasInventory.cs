@@ -1,23 +1,44 @@
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 /// <summary>
 /// [MainMenu 구성요소] 버튼 눌렀을 때 진입할 메인메뉴 우측 인벤토리 창
 /// </summary>
-public class UICanvasInventory : MonoBehaviour, IGUI
+public class UICanvasInventory : UIBase
 {
-    private IGUI iguiImplementation;
+    // 아이템 개수
+    public TextMeshProUGUI tmpCount;
+    
+    // 슬롯 관련
+    public Transform scrollViewContent;
+    public GameObject slotPrefab;
 
-    public void Initialization()
+    public override void Open(bool showBackButton)
     {
-        Close();
+        base.Open(showBackButton);
+        RefreshInventory();
     }
 
-    public void Open()
+    public void RefreshInventory()
     {
-        gameObject.SetActive(true);
-    }
+        List<ItemData> inventoryItems = GameManager.Instance.player.inventoryItems;
+        
+        // 기존것 파괴
+        foreach (Transform child in scrollViewContent)
+        {
+            Destroy(child.gameObject);
+        }
 
-    public void Close()
-    {
-        gameObject.SetActive(false);
+        // scrollViewContent 사용하려면은 
+        foreach (ItemData item in inventoryItems)
+        {
+            GameObject slotGO = Instantiate(slotPrefab, scrollViewContent);
+            UIInventorySlot slotUI = slotGO.GetComponent<UIInventorySlot>();
+            slotUI.SetItemSlot(item); // 슬롯에 데이터 설정
+            // 클릭시 이벤트 함수는 GameManager에 로직 처리되어있어서 등록처리만
+            slotUI.OnSlotClicked += GameManager.Instance.OnInventorySlotClicked;
+        }
+        
+        tmpCount.text = inventoryItems.Count.ToString();
     }
 }

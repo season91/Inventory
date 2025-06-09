@@ -1,23 +1,30 @@
+using TMPro;
 using UnityEngine;
 /// <summary>
 /// [MainMenu 구성요소] 좌측 캐릭터 정보창
 /// </summary>
-public class UICanvasStatus : MonoBehaviour, IGUI
+public class UICanvasStatus : UIBase
 {
-    private IGUI iguiImplementation;
-    
-    public void Initialization()
+    [SerializeField] private TextMeshProUGUI tmpAmountMood;
+    [SerializeField] private TextMeshProUGUI tmpAmountWeight;
+    [SerializeField] private TextMeshProUGUI tmpAmountStamina;
+    [SerializeField] private TextMeshProUGUI tmpAmountFullness;
+    [SerializeField] private TextMeshProUGUI tmpAmountSocial;
+
+    public override void Open(bool showBackButton)
     {
-        Close();
+        base.Open(showBackButton);
+        SetPlayerData();
     }
 
-    public void Open()
+    public void SetPlayerData()
     {
-        gameObject.SetActive(true);
-    }
+        PlayerData playerData = GameManager.Instance.player.data;
 
-    public void Close()
-    {
-        gameObject.SetActive(false);
+        tmpAmountMood.text = playerData.mood.ToString();
+        tmpAmountWeight.text = playerData.weight.ToString("N1") + "kg";
+        tmpAmountStamina.text = playerData.stamina.ToString();
+        tmpAmountFullness.text = playerData.fullness.ToString();
+        tmpAmountSocial.text = playerData.social.ToString();
     }
 }

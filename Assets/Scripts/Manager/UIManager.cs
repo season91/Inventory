@@ -20,7 +20,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private UICanvasMainMenu CanvasMainMenu;
     
     
-    
     private void Reset()
     {
         CanvasMainMenu = GetComponentInChildren<UICanvasMainMenu>();
@@ -36,14 +35,11 @@ public class UIManager : MonoBehaviour
 
     public void Init()
     {
-        Debug.Log("Init");
         CanvasMainMenu.Initialization();
     }
 
     public void MainStart()
     {
-        Debug.Log("MainStart");
         CanvasMainMenu.Open();
     }
-
 }

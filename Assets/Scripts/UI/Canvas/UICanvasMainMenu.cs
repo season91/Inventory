@@ -3,12 +3,15 @@ using UnityEngine;
 /// <summary>
 /// 큰 틀이 되는 메인 메뉴로 구성요소는 총 3개
 /// </summary>
-public class UICanvasMainMenu : MonoBehaviour, IGUI
+public class UICanvasMainMenu : UIBase
 {
     private IGUI iguiImplementation;
     
     // 좌측 캐릭터 정보 창
     [SerializeField] private UIChatactorInfo chatactorInfo;
+    
+    // 우측 상단 창
+    [SerializeField] private UIJellyInfo jellyInfo;
     
     // 우측 버튼 및 창
     [SerializeField] private UICanvasMenuBtn canvasMenuBtn;
@@ -18,6 +21,7 @@ public class UICanvasMainMenu : MonoBehaviour, IGUI
     private void Reset()
     {
         chatactorInfo = GetComponentInChildren<UIChatactorInfo>();
+        jellyInfo = GetComponentInChildren<UIJellyInfo>();
         
         canvasMenuBtn =  GetComponentInChildren<UICanvasMenuBtn>();
         canvasInventory = GetComponentInChildren<UICanvasInventory>();
@@ -25,28 +29,26 @@ public class UICanvasMainMenu : MonoBehaviour, IGUI
     }
 
     // 필요한 것 초기화 하고 일단 전체 비활성화. 활성화는 Open에서 할 것
-    public void Initialization()
+    public override void Initialization()
     {
-        chatactorInfo.Initialization(); 
-        
+        base.Initialization();
+        chatactorInfo.Initialization();
+        jellyInfo.Initialization();
         canvasMenuBtn.Initialization();
-        canvasInventory.Initialization(); 
+        canvasInventory.Initialization();
         canvasStatus.Initialization();
-
+        
         canvasMenuBtn.OnMenuButtonClicked += HandleMenuButtonClicked;
     }
 
-    // 메인메뉴 진입시 좌측 설명 Open
-    public void Open()
+    public override void Open()
     {
+        base.Open();
         chatactorInfo.Open();
+        jellyInfo.Open();
         canvasMenuBtn.Open();
     }
 
-    public void Close()
-    {
-    }
-    
     private void HandleMenuButtonClicked(MainButtonType type)
     {
         switch (type)
@@ -65,23 +67,20 @@ public class UICanvasMainMenu : MonoBehaviour, IGUI
 
     private void ShowStatus()
     {
-        canvasStatus.Open();
         canvasMenuBtn.Close();
-        canvasMenuBtn.OpenBackBtn();
+        canvasStatus.Open(true);
     }
 
     private void ShowInventory()
     {
-        canvasInventory.Open();
         canvasMenuBtn.Close();
-        canvasMenuBtn.OpenBackBtn();
+        canvasInventory.Open(true);
     }
 
     private void ShowMainMenu()
     {
-        Debug.Log("ShowMainMenu");
         if(canvasStatus.gameObject.activeSelf) canvasStatus.Close();
         if(canvasInventory.gameObject.activeSelf) canvasInventory.Close();
-        canvasMenuBtn.OpenMainBtn();
+        canvasMenuBtn.Open();
     }
 }

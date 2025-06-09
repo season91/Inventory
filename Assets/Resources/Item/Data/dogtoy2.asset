@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c36ede7447a8e45ad673e3c3f8d3ed, type: 3}
+  m_Name: dogtoy2
+  m_EditorClassIdentifier: 
+  itemName: dogtoy2
+  icon: {fileID: 21300000, guid: 50b48d645b80cd94a8266a510bd7379a, type: 3}
+  statType: 2
+  statValue: 5
+  description: "\uC7A5\uB09C\uAC102"

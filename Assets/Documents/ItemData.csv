@@ -1,0 +1,23 @@
+﻿itemName,iconName,stat,amount,description
+steak,steak,Mood,10,놀러갔을 때 먹는 특식
+waterbowl,waterbowl,Stamina,10,물그릇
+dish,dish,Stamina,10,밥그릇
+bacon,bacon,Mood,5,별미 토핑1
+meatball,meatball,Mood,5,별미 토핑2
+salmon,salmon,Mood,5,별미 토핑2
+poopbag,poopbag,Social,10,산책용 똥주머니
+harness,harness,Social,10,산책용 하네스
+chicken,chicken,Weight,0.2,산책하고 먹는 간식
+cake,cake,Weight,0.2,생일때만 먹는 간식
+dogicecream,dogicecream,Mood,5,여름에 먹는 강아지용 아이스크림
+dogfood1,dogfood1,Fullness,10,자주 먹는 사료1
+dogfood2,dogfood2,Fullness,10,자주 먹는 사료2
+dogfood3,dogfood3,Fullness,10,자주 먹는 사료3
+dogfood4,dogfood4,Fullness,10,자주 먹는 사료4
+dogfood5,dogfood5,Fullness,10,자주 먹는 사료5
+dogcusion,dogcusion,Stamina,10,잠잘 때 쓰는 쿠션
+dogtoy1,dogtoy1,Social,3,장난감1
+dogtoy2,dogtoy2,Social,5,장난감2
+dogtoy3,dogtoy3,Social,10,장난감3
+chocolate,chocolate,Weight,-100,절대 절대 먹으면 안되는 간식
+dogwaffle,dogwaffle,Mood,5,칭찬받고 먹는 간식

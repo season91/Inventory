@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c36ede7447a8e45ad673e3c3f8d3ed, type: 3}
+  m_Name: dogcusion
+  m_EditorClassIdentifier: 
+  itemName: dogcusion
+  icon: {fileID: 21300000, guid: e54e84277377e08478b1219ba4fae295, type: 3}
+  statType: 1
+  statValue: 10
+  description: "\uC7A0\uC798 \uB54C \uC4F0\uB294 \uCFE0\uC158"

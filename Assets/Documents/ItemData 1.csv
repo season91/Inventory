@@ -1,0 +1,23 @@
+﻿itemName,iconName,itemType,equipType,stat,amount,description
+bacon,bacon,Consumable,,Stamina|Mood,5|5,별미 토핑1
+cake,cake,Consumable,,Stamina|Weight,10|0.1,생일때만 먹는 간식
+chicken,chicken,Consumable,,Stamina|Weight,10|0.1,산책하고 먹는 간식
+chocolate,chocolate,Consumable,,Stamina|Weight,-100|-100,절대 절대 먹으면 안되는 간식
+dogfood1,dogfood1,Consumable,,Stamina|Fullness,10|10,자주 먹는 사료1
+dogfood2,dogfood2,Consumable,,Stamina|Fullness,10|10,자주 먹는 사료2
+dogfood3,dogfood3,Consumable,,Stamina|Fullness,10|10,자주 먹는 사료3
+dogfood4,dogfood4,Consumable,,Stamina|Fullness,10|10,자주 먹는 사료4
+dogfood5,dogfood5,Consumable,,Stamina|Fullness,10|10,자주 먹는 사료5
+dogicecream,dogicecream,Consumable,,Stamina|Mood,5|5,여름에 먹는 강아지용 아이스크림
+dogwaffle,dogwaffle,Consumable,,Stamina|Mood,5|5,칭찬받고 먹는 간식
+meatball,meatball,Consumable,,Stamina|Mood,5|5,별미 토핑2
+steak,steak,Consumable,,Stamina|Weight,10|0.1,놀러갔을 때 먹는 특식
+salmon,salmon,Consumable,,Stamina|Mood,5|5,별미 토핑2
+waterbowl,waterbowl,Equipable,RightDish,Stamina,10,물그릇
+dish,dish,Equipable,LeftDish,Stamina,10,밥그릇
+dogcusion,dogcusion,Equipable,Sleep,Stamina,10,잠잘 때 쓰는 쿠션
+dogtoy1,dogtoy1,Equipable,Toy,Social,3,장난감1
+dogtoy2,dogtoy2,Equipable,Toy,Social,5,장난감2
+dogtoy3,dogtoy3,Equipable,Toy,Social,10,장난감3
+harness,harness,Equipable,Neck,Social,10,산책용 하네스
+poopbag,poopbag,Equipable,Poop,Social,10,산책용 똥주머니
