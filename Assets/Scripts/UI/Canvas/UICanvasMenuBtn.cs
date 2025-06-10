@@ -16,6 +16,9 @@ public class UICanvasMenuBtn : UIBase
     
     private void Reset()
     {
+        canvasGroup = GetComponent<CanvasGroup>();
+        rectTransf = GetComponent<RectTransform>();
+        btnBack = transform.parent.Find("Btn_Back").GetComponent<Button>();
         btnStatus = GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name == "Btn_Status")?.GetComponent<Button>();
         btnInventory = GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name == "Btn_Inventory")?.GetComponent<Button>();
     }
@@ -31,6 +34,4 @@ public class UICanvasMenuBtn : UIBase
         btnInventory.onClick.AddListener(() => OnMenuButtonClicked?.Invoke(MainButtonType.Inventory));
         btnBack.onClick.AddListener(() => OnMenuButtonClicked?.Invoke(MainButtonType.Back));
     }
-
-    
 }

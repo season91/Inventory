@@ -10,6 +10,10 @@ public class UIJellyInfo : UIBase
 
     private void Reset()
     {
+        canvasGroup = GetComponent<CanvasGroup>();
+        rectTransf = GetComponent<RectTransform>();
+        btnBack = transform.parent.Find("Btn_Back").GetComponent<Button>();
+        
         imgIcon = GetComponentInChildren<Image>();
         tmpJelly = GetComponentInChildren<TextMeshProUGUI>();
     }

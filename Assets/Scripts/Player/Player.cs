@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 [Serializable]
@@ -78,6 +79,7 @@ public class Player : MonoBehaviour
     public List<ItemData> inventoryItems; // 가지고 있는 아이템
     public List<ItemData> equippedItems; // 장착한 아이템
     
+    [SerializeField] private Transform spriteTransform; 
     private void Awake()
     {
         data = new PlayerData
@@ -92,8 +94,15 @@ public class Player : MonoBehaviour
             introduction = "조씨집안 서열 1위\nMBTI : CUTE\n인스타 : @Premeee___\n팔로워 1,000명 보유\n유튜브 데뷔 준비 중\n좋아하는 거 고구마\n싫어하는 거 산책",
             jelly = 20000
         };
+
+        spriteTransform = GetComponent<Transform>();
     }
-    
+
+    private void Start()
+    {
+        StartIdleTilt();
+    }
+
     public void EquipItem(ItemData item)
     {
         equippedItems.Add(item);
@@ -104,4 +113,13 @@ public class Player : MonoBehaviour
         equippedItems.Remove(item);
         data.RemoveStat(item.statType, item.statValue);
     }
+    
+    private void StartIdleTilt()
+    {
+        spriteTransform
+            .DOLocalRotate(new Vector3(0, 0, 5f), 0.5f) // Z축으로 5도 회전
+            .SetLoops(-1, LoopType.Yoyo) // 무한 반복: 왔다갔다
+            .SetEase(Ease.InOutSine);
+    }
+
 }

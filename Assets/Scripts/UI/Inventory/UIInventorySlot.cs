@@ -11,9 +11,6 @@ public class UIInventorySlot : MonoBehaviour
     [SerializeField] private Button itemBtn;
     [SerializeField] private GameObject tmpItemEquip;
     
-    private bool isEquipped;
-    public bool IsEquipped => isEquipped;
-    
     // UICanvasInventory 에서 해당 Slot 생성할때 등록해줄 것
     public Action<UIInventorySlot> OnSlotClicked;
     
@@ -32,12 +29,11 @@ public class UIInventorySlot : MonoBehaviour
         imgItemIcon.enabled = true;
         imgItemIcon.sprite = item.icon;
         itemData = item;
-        SetItemEquip(false);
+        SetItemEquipUI(false);
     }
 
-    public void SetItemEquip(bool isEquipped)
+    public void SetItemEquipUI(bool isEquipped)
     {
-        this.isEquipped = isEquipped;
         tmpItemEquip.SetActive(isEquipped);
     }
 

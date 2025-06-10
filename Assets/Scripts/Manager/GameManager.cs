@@ -45,13 +45,13 @@ public class GameManager : MonoBehaviour
         {
             // 장착 해제
             player.UnEquipItem(slot.itemData);
-            slot.SetItemEquip(false); // 인벤토리 전체 갱신이 아니고 효과도 아니기 떄문에 UIManager 거치지 않고 바로 처리
+            slot.SetItemEquipUI(false); // 인벤토리 전체 갱신이 아니고 효과도 아니기 떄문에 UIManager 거치지 않고 바로 처리
         }
         else
         {
             // 장착
             player.EquipItem(slot.itemData);
-            slot.SetItemEquip(true);
+            slot.SetItemEquipUI(true);
         }
     }
 }

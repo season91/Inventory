@@ -1,14 +1,14 @@
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 /// <summary>
 /// 큰 틀이 되는 메인 메뉴로 구성요소는 총 3개
 /// </summary>
 public class UICanvasMainMenu : UIBase
 {
-    private IGUI iguiImplementation;
-    
     // 좌측 캐릭터 정보 창
-    [SerializeField] private UIChatactorInfo chatactorInfo;
+    [FormerlySerializedAs("chatactorInfo")] [SerializeField] private UICharactorInfo charactorInfo;
     
     // 우측 상단 창
     [SerializeField] private UIJellyInfo jellyInfo;
@@ -20,7 +20,11 @@ public class UICanvasMainMenu : UIBase
     
     private void Reset()
     {
-        chatactorInfo = GetComponentInChildren<UIChatactorInfo>();
+        canvasGroup = GetComponent<CanvasGroup>();
+        rectTransf = GetComponent<RectTransform>();
+        btnBack = transform.Find("Btn_Back").GetComponent<Button>();
+        
+        charactorInfo = GetComponentInChildren<UICharactorInfo>();
         jellyInfo = GetComponentInChildren<UIJellyInfo>();
         
         canvasMenuBtn =  GetComponentInChildren<UICanvasMenuBtn>();
@@ -32,7 +36,7 @@ public class UICanvasMainMenu : UIBase
     public override void Initialization()
     {
         base.Initialization();
-        chatactorInfo.Initialization();
+        charactorInfo.Initialization();
         jellyInfo.Initialization();
         canvasMenuBtn.Initialization();
         canvasInventory.Initialization();
@@ -44,7 +48,7 @@ public class UICanvasMainMenu : UIBase
     public override void Open()
     {
         base.Open();
-        chatactorInfo.Open();
+        charactorInfo.Open();
         jellyInfo.Open();
         canvasMenuBtn.Open();
     }
