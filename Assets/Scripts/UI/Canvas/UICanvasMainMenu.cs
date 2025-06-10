@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class UICanvasMainMenu : UIBase
 {
     // 좌측 캐릭터 정보 창
-    [FormerlySerializedAs("chatactorInfo")] [SerializeField] private UICharactorInfo charactorInfo;
+    [SerializeField] private UICharactorInfo charactorInfo;
     
     // 우측 상단 창
     [SerializeField] private UIJellyInfo jellyInfo;
@@ -18,9 +18,6 @@ public class UICanvasMainMenu : UIBase
     [SerializeField] private UICanvasInventory canvasInventory;
     [SerializeField] private UICanvasStatus canvasStatus;
     
-    // 툴팁
-    public UITooltip tooltip;
-    
     private void Reset()
     {
         canvasGroup = GetComponent<CanvasGroup>();
@@ -29,25 +26,15 @@ public class UICanvasMainMenu : UIBase
         
         charactorInfo = GetComponentInChildren<UICharactorInfo>();
         jellyInfo = GetComponentInChildren<UIJellyInfo>();
-        tooltip = GetComponentInChildren<UITooltip>();
         
         canvasMenuBtn =  GetComponentInChildren<UICanvasMenuBtn>();
         canvasInventory = GetComponentInChildren<UICanvasInventory>();
         canvasStatus = GetComponentInChildren<UICanvasStatus>();
     }
-
-    // 필요한 것 초기화 하고 일단 전체 비활성화. 활성화는 Open에서 할 것
+    
     public override void Initialization()
     {
         base.Initialization();
-        charactorInfo.Initialization();
-        jellyInfo.Initialization();
-        canvasMenuBtn.Initialization();
-        canvasInventory.Initialization();
-        canvasStatus.Initialization();
-        
-        tooltip.Initialization();
-        
         canvasMenuBtn.OnMenuButtonClicked += HandleMenuButtonClicked;
     }
 
@@ -96,7 +83,7 @@ public class UICanvasMainMenu : UIBase
     
     public void HandleSlotHovered(UIInventorySlot slot)
     {
-        UITooltip slotTooltip = UIManager.Instance.canvasMainMenu.tooltip;
+        UITooltip slotTooltip = UIManager.Instance.Get<UITooltip>();
         
         slotTooltip.SetDescription(slot.itemData.description);
         slotTooltip.SetPosition(slot.transform);
@@ -105,7 +92,7 @@ public class UICanvasMainMenu : UIBase
 
     public void HandleSlotUnHovered()
     {
-        UITooltip slotTooltip = UIManager.Instance.canvasMainMenu.tooltip;
+        UITooltip slotTooltip = UIManager.Instance.Get<UITooltip>();
         slotTooltip.Close(true);
     }
 }

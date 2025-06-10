@@ -56,8 +56,8 @@ public class UICanvasInventory : UIBase
             
             // 클릭시 이벤트 함수는 GameManager에 로직 처리되어있어서 등록처리만
             slotUI.OnSlotClicked += GameManager.Instance.OnInventorySlotClicked;
-            slotUI.OnSlotHovered += UIManager.Instance.canvasMainMenu.HandleSlotHovered;
-            slotUI.OnSlotUnhovered += UIManager.Instance.canvasMainMenu.HandleSlotUnHovered;
+            slotUI.OnSlotHovered += UIManager.Instance.Get<UICanvasMainMenu>().HandleSlotHovered;
+            slotUI.OnSlotUnhovered += UIManager.Instance.Get<UICanvasMainMenu>().HandleSlotUnHovered;
         }
         
         tmpCount.text = inventoryItems.Count.ToString();

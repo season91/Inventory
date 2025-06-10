@@ -33,7 +33,12 @@ public class UIManager : MonoBehaviour
 
     public void Init()
     {
-        canvasMainMenu.Initialization();
+        var uiBases = transform.GetComponentsInChildren<UIBase>();
+        for (int i = 0; i < uiBases.Length; i++)
+        {
+            uiBases[i].Initialization();
+            uiBaseDict.Add(uiBases[i].GetType(), uiBases[i]);
+        }
     }
 
     public void MainStart()
