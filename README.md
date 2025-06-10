@@ -33,8 +33,8 @@ Scripts/
 │ │
 │ └── UIBase.cs # 공통 UI 베이스 클래스
 │
-├── Utils/
-│ └── CSVImporter.cs # CSV 파일로 데이터 불러오기 (아이템 등)
+└── Utils/
+  └── CSVImporter.cs # CSV 파일로 데이터 불러오기 (아이템 등)
 ```
 ---
 
