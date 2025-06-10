@@ -30,7 +30,6 @@ public class PlayerData
         switch (statType)
         {
             case StatType.Weight:
-                Debug.Log("weight " + amount);
                 weight += amount;
                 break;
             case StatType.Mood:
@@ -74,7 +73,7 @@ public class PlayerData
 
 public class Player : MonoBehaviour
 {
-    public PlayerData data;
+    [MyTag(3)] public PlayerData data;
 
     public List<ItemData> inventoryItems; // 가지고 있는 아이템
     public List<ItemData> equippedItems; // 장착한 아이템

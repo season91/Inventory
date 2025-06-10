@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.MainStart();
     }
 
+    // 아이템 장착
     public void OnInventorySlotClicked(UIInventorySlot slot)
     {
         if (slot.itemData == null) return;

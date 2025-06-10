@@ -1,8 +1,11 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
     private static UIManager instance;
+    private Dictionary<Type, UIBase> uiBaseDict = new();
     public static UIManager Instance 
     {
         get
@@ -13,11 +16,11 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    [SerializeField] private UICanvasMainMenu CanvasMainMenu;
+    public UICanvasMainMenu canvasMainMenu;
     
     private void Reset()
     {
-        CanvasMainMenu = GetComponentInChildren<UICanvasMainMenu>();
+        canvasMainMenu = GetComponentInChildren<UICanvasMainMenu>();
     }
 
     private void Awake()
@@ -30,11 +33,25 @@ public class UIManager : MonoBehaviour
 
     public void Init()
     {
-        CanvasMainMenu.Initialization();
+        canvasMainMenu.Initialization();
     }
 
     public void MainStart()
     {
-        CanvasMainMenu.Open();
+        canvasMainMenu.Open();
+    }
+
+    public T Get<T>() where T : UIBase
+    {
+        var type = typeof(T);
+
+        if (uiBaseDict.ContainsKey(type))
+        {
+            return uiBaseDict[type] as T;
+        }
+        else
+        {
+            return null;
+        }
     }
 }

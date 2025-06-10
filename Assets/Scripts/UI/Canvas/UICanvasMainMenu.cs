@@ -18,6 +18,9 @@ public class UICanvasMainMenu : UIBase
     [SerializeField] private UICanvasInventory canvasInventory;
     [SerializeField] private UICanvasStatus canvasStatus;
     
+    // 툴팁
+    public UITooltip tooltip;
+    
     private void Reset()
     {
         canvasGroup = GetComponent<CanvasGroup>();
@@ -26,6 +29,7 @@ public class UICanvasMainMenu : UIBase
         
         charactorInfo = GetComponentInChildren<UICharactorInfo>();
         jellyInfo = GetComponentInChildren<UIJellyInfo>();
+        tooltip = GetComponentInChildren<UITooltip>();
         
         canvasMenuBtn =  GetComponentInChildren<UICanvasMenuBtn>();
         canvasInventory = GetComponentInChildren<UICanvasInventory>();
@@ -41,6 +45,8 @@ public class UICanvasMainMenu : UIBase
         canvasMenuBtn.Initialization();
         canvasInventory.Initialization();
         canvasStatus.Initialization();
+        
+        tooltip.Initialization();
         
         canvasMenuBtn.OnMenuButtonClicked += HandleMenuButtonClicked;
     }
@@ -86,5 +92,20 @@ public class UICanvasMainMenu : UIBase
         if(canvasStatus.gameObject.activeSelf) canvasStatus.Close();
         if(canvasInventory.gameObject.activeSelf) canvasInventory.Close();
         canvasMenuBtn.Open();
+    }
+    
+    public void HandleSlotHovered(UIInventorySlot slot)
+    {
+        UITooltip slotTooltip = UIManager.Instance.canvasMainMenu.tooltip;
+        
+        slotTooltip.SetDescription(slot.itemData.description);
+        slotTooltip.SetPosition(slot.transform);
+        slotTooltip.Open(true);
+    }
+
+    public void HandleSlotUnHovered()
+    {
+        UITooltip slotTooltip = UIManager.Instance.canvasMainMenu.tooltip;
+        slotTooltip.Close(true);
     }
 }

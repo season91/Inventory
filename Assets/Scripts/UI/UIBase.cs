@@ -52,7 +52,8 @@ public abstract class UIBase : MonoBehaviour
     }
 
     // UI 닫기 함수 (인벤토리 등 숨길 때 사용)
-    public virtual void Close()
+    public virtual void Close() => Close(false); 
+    public virtual void Close(bool showBackButton)
     {
         // 닫을 때는 즉시 클릭 막기
         canvasGroup.blocksRaycasts = false;
@@ -61,9 +62,8 @@ public abstract class UIBase : MonoBehaviour
         rectTransf.DOScale(0f, 0.1f)
                   .OnComplete(() =>
                   {
-                      gameObject.SetActive(false);
+                      gameObject.SetActive(showBackButton);
                   });
-        
     }
     
     private void SetBackButtonVisible(bool visible)

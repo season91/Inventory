@@ -2,9 +2,10 @@ using System;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UIInventorySlot : MonoBehaviour
+public class UIInventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private Image imgItemIcon;
     public ItemData itemData;
@@ -13,6 +14,10 @@ public class UIInventorySlot : MonoBehaviour
     
     // UICanvasInventory 에서 해당 Slot 생성할때 등록해줄 것
     public Action<UIInventorySlot> OnSlotClicked;
+    
+    // tooltip 델리게이트 
+    public Action<UIInventorySlot> OnSlotHovered;
+    public Action OnSlotUnhovered;
     
     private void Reset()
     {
@@ -37,4 +42,14 @@ public class UIInventorySlot : MonoBehaviour
         tmpItemEquip.SetActive(isEquipped);
     }
 
+    // 아이템 툴팁을 위해 사용
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        OnSlotHovered?.Invoke(this);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        OnSlotUnhovered?.Invoke();
+    }
 }
