@@ -10,9 +10,6 @@ public enum MainButtonType
     Inventory,
     Back
 }
-/// <summary>
-/// 
-/// </summary>
 public abstract class UIBase : MonoBehaviour
 {
     // CanvasGroup은 UI의 투명도(alpha), 상호작용 가능 여부(Raycast) 등을 제어함
@@ -41,21 +38,16 @@ public abstract class UIBase : MonoBehaviour
     
     public virtual void Open(bool showBackButton)
     {
-        // 1. 우선 GameObject 자체를 활성화함 (SetActive true)
+        // GameObject 활성화
         gameObject.SetActive(true);
         
-        // 2. 초기 상태 세팅: 투명하고 축소된 상태로 시작
-        canvasGroup.alpha = 0;
-        rectTransf.localScale = Vector3.zero;
-        canvasGroup.blocksRaycasts = false; // 클릭도 막아둠 (애니메이션 도중)
-
-        // 3. 애니메이션 시작: 투명도 1, 크기 1로 확대
+        // 애니메이션 시작
         canvasGroup.DOFade(1f, 0.2f);
         rectTransf.DOScale(1f, 0.5f)
                   .SetEase(Ease.OutBack)
                   .OnComplete(() => canvasGroup.blocksRaycasts = true);// 애니메이션 끝나면 클릭 허용
         
-        // 4. 뒤로가기 버튼 처리
+        // 뒤로가기 버튼 처리
         SetBackButtonVisible(showBackButton);
     }
 

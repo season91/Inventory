@@ -117,7 +117,7 @@ public class Player : MonoBehaviour
     private void StartIdleTilt()
     {
         spriteTransform
-            .DOLocalRotate(new Vector3(0, 0, 5f), 0.5f) // Z축으로 5도 회전
+            .DOLocalRotate(new Vector3(0, 0, 5f), 0.5f)
             .SetLoops(-1, LoopType.Yoyo) // 무한 반복: 왔다갔다
             .SetEase(Ease.InOutSine);
     }

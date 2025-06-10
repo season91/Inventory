@@ -33,22 +33,6 @@ public class CSVImporter
             item.statType = Enum.Parse<StatType>(cols[2]);
             item.statValue = float.Parse(cols[3]);
             item.description = cols[4];
-            // item.itemType = Enum.Parse<ItemType>(cols[2]);
-            // if (cols[3] == null || cols[3] == "")
-            // {
-            //     ItemDataConsumable cdata = new ItemDataConsumable();
-            //     cdata.types = ParseEnums<ConsumableType>(cols[4]);
-            //     cdata.amounts = ParseFloats(cols[5]);
-            //     item.consumableData = cdata;
-            // }
-            // else
-            // {
-            //     ItemDataEquipable edata = new  ItemDataEquipable();
-            //     edata.equipType = Enum.Parse<EquipableType>(cols[3].Trim());
-            //     edata.statType = Enum.Parse<StatType>(cols[4]);
-            //     edata.amount = int.Parse(cols[5]);
-            //     item.equipableData = edata;
-            // }
             
             string assetPath = $"{targetFolder}/{item.itemName}.asset";
             var existing = AssetDatabase.LoadAssetAtPath<ItemData>(assetPath);
