@@ -391,7 +391,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 21-04-29
+  m_text: 20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a99eea4a4c9beca49a508b2f5a0c07c8, type: 2}
   m_sharedMaterial: {fileID: 9209533785781122842, guid: a99eea4a4c9beca49a508b2f5a0c07c8, type: 2}
@@ -525,7 +525,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 21-04-29
+  m_text: 20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a99eea4a4c9beca49a508b2f5a0c07c8, type: 2}
   m_sharedMaterial: {fileID: 9209533785781122842, guid: a99eea4a4c9beca49a508b2f5a0c07c8, type: 2}
@@ -1294,7 +1294,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 21-04-29
+  m_text: 0.0kg
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a99eea4a4c9beca49a508b2f5a0c07c8, type: 2}
   m_sharedMaterial: {fileID: 9209533785781122842, guid: a99eea4a4c9beca49a508b2f5a0c07c8, type: 2}
@@ -1994,6 +1994,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0b54fdc3475829842a7b682fa8909e98, type: 2}
   - {fileID: 11400000, guid: 4f9f41af788bb45498e19147421ff6ff, type: 2}
   equippedItems: []
+  spriteTransform: {fileID: 0}
 --- !u!1 &1023275043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2357,7 +2358,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 21-04-29
+  m_text: 20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a99eea4a4c9beca49a508b2f5a0c07c8, type: 2}
   m_sharedMaterial: {fileID: 9209533785781122842, guid: a99eea4a4c9beca49a508b2f5a0c07c8, type: 2}
@@ -4233,10 +4234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC870\uC528\uC9D1\uC548 \uC11C\uC5F4 1\uC704\nMBTI : CUTE\n\uC778\uC2A4\uD0C0
-    : @Premeee___\n\uD314\uB85C\uC6CC 1,000\uBA85 \uBCF4\uC720\n\uC720\uD29C\uBE0C
-    \uB370\uBDD4 \uC900\uBE44 \uC911\n\uC88B\uC544\uD558\uB294 \uAC70 \uACE0\uAD6C\uB9C8\n\uC2EB\uC5B4\uD558\uB294
-    \uAC70 \uC0B0\uCC45"
+  m_text: '@Premeee___'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a99eea4a4c9beca49a508b2f5a0c07c8, type: 2}
   m_sharedMaterial: {fileID: 9209533785781122842, guid: a99eea4a4c9beca49a508b2f5a0c07c8, type: 2}
@@ -5552,7 +5550,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0/15
+  m_text: 15
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a99eea4a4c9beca49a508b2f5a0c07c8, type: 2}
   m_sharedMaterial: {fileID: 9209533785781122842, guid: a99eea4a4c9beca49a508b2f5a0c07c8, type: 2}
