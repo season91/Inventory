@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 // 스탯 
