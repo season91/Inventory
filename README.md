@@ -1,5 +1,6 @@
 # Inventory
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/8e15c716-40c6-40ed-9b95-e686e68a6f10" />
+
 저희집 강아지를 캐릭터로 삼아 프림이 가방을 구현했습니다. 주로 먹을 것만 들어 있습니다.
 
 # Scripts 폴더 구조 안내
