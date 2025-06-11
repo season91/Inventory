@@ -22,6 +22,7 @@ public class UIInventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExit
     {
         imgItemIcon = transform.Find("Img_Item_Icon").GetComponent<Image>();
         itemBtn = GetComponent<Button>();
+        tmpItemEquip = imgItemIcon.transform.Find("Tmp_Item_Equip").gameObject;
     }
     private void Start()
     {
