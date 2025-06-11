@@ -21,17 +21,11 @@ public class UICharactorInfo : UIBase
         rectTransf = GetComponent<RectTransform>();
         btnBack = transform.parent.Find("Btn_Back").GetComponent<Button>();
         
-        tmpName = GetComponentsInChildren<Transform>(true)
-                  .FirstOrDefault(t => t.name == "Tmp_Name")?.GetComponent<TextMeshProUGUI>();
-        tmpDescription = GetComponentsInChildren<Transform>(true)
-                         .FirstOrDefault(t => t.name == "Tmp_Description")?.GetComponent<TextMeshProUGUI>();
-        tmpAge = GetComponentsInChildren<Transform>(true)
-                 .FirstOrDefault(t => t.name == "Tmp_Age")?.GetComponent<TextMeshProUGUI>();
-        fillBar = GetComponentsInChildren<Transform>(true)
-                  .FirstOrDefault(t => t.name == "Img_ExpBar")?.GetComponent<RectTransform>();
-        maxGaugeWidth = (GetComponentsInChildren<Transform>(true)
-                         .FirstOrDefault(t => t.name == "Img_ExpBar")
-                         ?.GetComponent<RectTransform>()?.sizeDelta.x) ?? 0f;
+        tmpName = transform.Find("Tmp_Name").GetComponent<TextMeshProUGUI>();
+        tmpDescription = transform.Find("Tmp_Description").GetComponent<TextMeshProUGUI>();
+        tmpAge = transform.Find("Group_State/Tmp_Age").GetComponent<TextMeshProUGUI>();
+        fillBar = transform.Find("Group_State/Img_ExpBar").GetComponent<RectTransform>();
+        maxGaugeWidth = (transform.Find("Group_State/Img_ExpBar").GetComponent<RectTransform>()?.sizeDelta.x) ?? 0f;
     }
 
     public override void Open()

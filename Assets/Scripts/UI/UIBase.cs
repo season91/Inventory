@@ -17,11 +17,10 @@ public abstract class UIBase : MonoBehaviour
     // 실제 애니메이션을 적용할 UI Panel (보통은 전체 패널의 RectTransform)
     [SerializeField] protected RectTransform rectTransf;
 
-    protected bool isInitialized = false; // 초기화 확인 변수
+    protected bool isInitialized = false; 
     
     [SerializeField] protected Button btnBack;
 
-    // Initialization: UI 최초 준비 (한 번만 실행)
     public virtual void Initialization()
     {
         if (isInitialized) return;

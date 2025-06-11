@@ -20,7 +20,7 @@ public class UIInventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExit
     
     private void Reset()
     {
-        imgItemIcon = GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name == "Img_Item_Icon")?.GetComponent<Image>();
+        imgItemIcon = transform.Find("Img_Item_Icon").GetComponent<Image>();
         itemBtn = GetComponent<Button>();
     }
     private void Start()

@@ -19,8 +19,8 @@ public class UICanvasMenuBtn : UIBase
         canvasGroup = GetComponent<CanvasGroup>();
         rectTransf = GetComponent<RectTransform>();
         btnBack = transform.parent.Find("Btn_Back").GetComponent<Button>();
-        btnStatus = GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name == "Btn_Status")?.GetComponent<Button>();
-        btnInventory = GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name == "Btn_Inventory")?.GetComponent<Button>();
+        btnStatus = transform.Find("Btn_Status").GetComponent<Button>();
+        btnInventory = transform.Find("Btn_Inventory").GetComponent<Button>();
     }
 
     public override void Initialization()

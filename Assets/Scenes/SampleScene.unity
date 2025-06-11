@@ -3356,7 +3356,6 @@ MonoBehaviour:
   canvasMenuBtn: {fileID: 630670344}
   canvasInventory: {fileID: 1948751045}
   canvasStatus: {fileID: 255727619}
-  tooltip: {fileID: 1698765200}
 --- !u!225 &2044434015
 CanvasGroup:
   m_ObjectHideFlags: 0

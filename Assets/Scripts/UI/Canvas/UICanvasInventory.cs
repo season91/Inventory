@@ -23,7 +23,13 @@ public class UICanvasInventory : UIBase
         
         tmpCount = transform.Find("Group_Inventory/Tmp_Count").GetComponent<TextMeshProUGUI>();
         scrollViewContent = transform.Find("Group_Inventory/Scroll View/Viewport/Content").GetComponent<Transform>();
+        
         slotPrefab = Resources.Load<GameObject>("GUI/Group_Slot");
+        if (slotPrefab == null)
+        {
+            Debug.LogWarning($"[UICanvasInventory] 리소스 로드 실패: GUI/Group_Slot 에 해당하는 slotPrefab 없습니다.");
+            return;
+        }
     }
 
     public override void Open(bool showBackButton)

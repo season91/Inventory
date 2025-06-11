@@ -54,7 +54,7 @@ MonoBehaviour:
   imgItemIcon: {fileID: 9020453974400905941}
   itemData: {fileID: 0}
   itemBtn: {fileID: 7875815249215797898}
-  tmpItemEquip: {fileID: 5377892638945839024}
+  tmpItemEquip: {fileID: 0}
 --- !u!114 &7875815249215797898
 MonoBehaviour:
   m_ObjectHideFlags: 0
